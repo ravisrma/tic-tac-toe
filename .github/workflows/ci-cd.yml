@@ -58,7 +58,7 @@ jobs:
         run: |
           echo "ECS_CLUSTER=tic-tac-toe-prod-cluster" >> "$GITHUB_ENV"
           echo "ECS_SERVICE=tic-tac-toe-prod-ecs-service" >> "$GITHUB_ENV"
-          echo "CONTAINER_NAME=tic-tac-toe-prod-ecs-container" >> "$GITHUB_ENV"
+          echo "CONTAINER_NAME=tic-tac-toe-prod-container" >> "$GITHUB_ENV"
           echo "ECR_REPOSITORY=tic-tac-toe-prod-ecr" >> "$GITHUB_ENV"
           echo "ECS_TASK_DEFINITION=tic-tac-toe-task" >> "$GITHUB_ENV"
 
