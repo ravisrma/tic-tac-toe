@@ -69,3 +69,16 @@ resource "aws_lb_listener" "listener" {
     target_group_arn = aws_lb_target_group.target_group.id
   }
 }
+
+# Add a Route 53 DNS record for the ALB
+resource "aws_route53_record" "alb_dns_record" {
+  zone_id = var.route53_zone_id # Hosted Zone ID for your domain
+  name    = var.route53_record_name # Subdomain or domain name (e.g., "app.example.com")
+  type    = "A"
+
+  alias {
+    name                   = aws_alb.application_load_balancer.dns_name
+    zone_id                = aws_alb.application_load_balancer.zone_id
+    evaluate_target_health = true
+  }
+}

@@ -38,3 +38,13 @@ variable "private_subnets" {
 variable "availability_zones" {
   description = "List of availability zones"
 }
+
+variable "route53_zone_id" {
+  description = "The ID of the Route 53 hosted zone"
+  type        = string
+}
+
+variable "route53_record_name" {
+  description = "The DNS name for the ALB (e.g., app.example.com)"
+  type        = string
+}
